@@ -39,7 +39,7 @@
                                 <rect key="frame" x="0.0" y="48" width="414" height="765"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9YC-Fe-cBY">
-                                <rect key="frame" x="0.0" y="48" width="414" height="765"/>
+                                <rect key="frame" x="0.0" y="104" width="414" height="745"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CharacterTableViewCell" rowHeight="170" id="uNh-5v-kN7" customClass="CharacterTableViewCell" customModule="iOSTakeHomeChallenge" customModuleProvider="target">
@@ -144,26 +144,36 @@
                                     <outlet property="dataSource" destination="dZF-lQ-UsK" id="lUg-Hq-r3E"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ldY-4h-sbC">
+                                <rect key="frame" x="0.0" y="48" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="dZF-lQ-UsK" id="lQh-R5-h1k"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BeD-f8-Mi4"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="9YC-Fe-cBY" firstAttribute="top" secondItem="ldY-4h-sbC" secondAttribute="bottom" id="06P-8C-RuN"/>
                             <constraint firstItem="9YC-Fe-cBY" firstAttribute="leading" secondItem="BeD-f8-Mi4" secondAttribute="leading" id="1Sw-U7-ZJ3"/>
                             <constraint firstItem="qEB-7T-5A3" firstAttribute="top" secondItem="BeD-f8-Mi4" secondAttribute="top" id="5Nf-cC-fm1"/>
                             <constraint firstItem="BeD-f8-Mi4" firstAttribute="trailing" secondItem="9YC-Fe-cBY" secondAttribute="trailing" id="8Qs-Dj-rqh"/>
+                            <constraint firstItem="ldY-4h-sbC" firstAttribute="trailing" secondItem="BeD-f8-Mi4" secondAttribute="trailing" id="AGG-Vd-nCV"/>
                             <constraint firstItem="BeD-f8-Mi4" firstAttribute="bottom" secondItem="qEB-7T-5A3" secondAttribute="bottom" id="CKj-MK-3Ja"/>
-                            <constraint firstItem="BeD-f8-Mi4" firstAttribute="bottom" secondItem="9YC-Fe-cBY" secondAttribute="bottom" id="J3g-VM-BKP"/>
+                            <constraint firstItem="BeD-f8-Mi4" firstAttribute="bottom" secondItem="9YC-Fe-cBY" secondAttribute="bottom" constant="-36" id="J3g-VM-BKP"/>
                             <constraint firstItem="BeD-f8-Mi4" firstAttribute="trailing" secondItem="qEB-7T-5A3" secondAttribute="trailing" id="Qe3-he-qZK"/>
-                            <constraint firstItem="9YC-Fe-cBY" firstAttribute="bottom" secondItem="BeD-f8-Mi4" secondAttribute="bottom" id="WEO-X7-O26"/>
+                            <constraint firstItem="ldY-4h-sbC" firstAttribute="top" secondItem="BeD-f8-Mi4" secondAttribute="top" id="Sci-Hg-90C"/>
+                            <constraint firstItem="ldY-4h-sbC" firstAttribute="leading" secondItem="BeD-f8-Mi4" secondAttribute="leading" id="Vi4-JP-taY"/>
+                            <constraint firstItem="9YC-Fe-cBY" firstAttribute="bottom" secondItem="BeD-f8-Mi4" secondAttribute="bottom" constant="36" id="WEO-X7-O26"/>
                             <constraint firstItem="9YC-Fe-cBY" firstAttribute="leading" secondItem="BeD-f8-Mi4" secondAttribute="leading" id="YRB-fn-dVh"/>
                             <constraint firstItem="qEB-7T-5A3" firstAttribute="leading" secondItem="BeD-f8-Mi4" secondAttribute="leading" id="dGZ-xC-0rs"/>
                             <constraint firstItem="9YC-Fe-cBY" firstAttribute="trailing" secondItem="BeD-f8-Mi4" secondAttribute="trailing" id="mjS-M5-CAn"/>
-                            <constraint firstItem="9YC-Fe-cBY" firstAttribute="top" secondItem="BeD-f8-Mi4" secondAttribute="top" id="vHg-0D-pat"/>
-                            <constraint firstItem="9YC-Fe-cBY" firstAttribute="top" secondItem="BeD-f8-Mi4" secondAttribute="top" id="wcR-7a-FWB"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Characters" image="tabbarCharacters" selectedImage="tabbarCharactersActive" id="7K3-9A-uXX"/>
                     <connections>
+                        <outlet property="searchBar" destination="ldY-4h-sbC" id="ejK-8c-zHZ"/>
                         <outlet property="tableView" destination="9YC-Fe-cBY" id="ZLn-Kf-aHA"/>
                     </connections>
                 </viewController>
