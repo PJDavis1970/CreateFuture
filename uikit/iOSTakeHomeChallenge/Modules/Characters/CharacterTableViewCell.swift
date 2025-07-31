@@ -19,20 +19,23 @@ class CharacterTableViewCell: UITableViewCell {
         var seasons = ""
 
         for season in character.tvSeries {
+            if seasons.count != 0 {
+                seasons.append(", ")
+            }
             if season == "Season 1" {
-                seasons.append("I ")
+                seasons.append("I")
             } else if season == "Season 2" {
-                seasons.append("II, ")
+                seasons.append("II")
             } else if season == "Season 3" {
-                seasons.append("III, ")
+                seasons.append("III")
             } else if season == "Season 4" {
-                seasons.append("IV, ")
+                seasons.append("IV")
             } else if season == "Season 5" {
-                seasons.append("V, ")
+                seasons.append("V")
             } else if season == "Season 6" {
-                seasons.append("VI, ")
+                seasons.append("VI")
             } else if season == "Season 7" {
-                seasons.append("VII, ")
+                seasons.append("VII")
             } else if season == "Season 8" {
                 seasons.append("VIII")
             }
